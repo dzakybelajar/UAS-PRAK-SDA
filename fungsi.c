@@ -47,3 +47,14 @@ PasienNode* createPasien(long long nik, char nama[], char alamat[], int urgensi,
     strcpy(newNode->nama, nama);
     strcpy(newNode->alamat, alamat);
     newNode->urgensi = urgensi;
+
+    if(diagnosa == NULL) strcpy(newNode->diagnosa, "Belum Diperiksa");
+    else strcpy(newNode->diagnosa, diagnosa);
+    
+    newNode->left = newNode->right = NULL;
+    newNode->waktu_periksa = (waktu == 0) ? time(NULL) : waktu;
+    newNode->height = 1;
+
+    totalPasien++;
+    return newNode;
+}
