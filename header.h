@@ -57,3 +57,19 @@ void updateStatusPasien();
 void pushUndo(StackNode** top, char teks[]);
 void addLog(PasienNode* p);
 void prosesPeriksa();
+
+// Pelaporan (Merge Sort)
+void kumpulData(PasienNode* root, PasienNode** arr, int* index);
+void merge(PasienNode** arr, int l, int m, int r);
+void mergeSort(PasienNode** arr, int l, int r);
+void tampilkanLaporan();
+
+// File Database System
+void simpanKeFile(PasienNode* root, FILE* file);
+void simpanDatabase();
+void loadDatabase();
+
+void bersihkanAVL(PasienNode* root);
+void bersihkanQueue();
+
+#endif
