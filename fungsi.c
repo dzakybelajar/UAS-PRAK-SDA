@@ -20,3 +20,13 @@ int getBalance(PasienNode* n) {
     if (n == NULL) return 0;
     return getHeight(n->left) - getHeight(n->right);
 }
+
+PasienNode* rightRotate(PasienNode* y) {
+    PasienNode* x = y->left;
+    PasienNode* T2 = x->right;
+    x->right = y;
+    y->left = T2;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+    return x;
+}
