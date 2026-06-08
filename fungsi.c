@@ -30,3 +30,13 @@ PasienNode* rightRotate(PasienNode* y) {
     x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
     return x;
 }
+
+PasienNode* leftRotate(PasienNode* x) {
+    PasienNode* y = x->right;
+    PasienNode* T2 = y->left;
+    y->left = x;
+    x->right = T2;
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+    return y;
+}
