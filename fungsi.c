@@ -75,3 +75,30 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
             if (balance > 1 && newNode->nik < node->left->nik) return rightRotate(node);
     
     if (balance < -1 && newNode->nik > node->right->nik) return leftRotate(node);
+    
+        if (balance > 1 && newNode->nik > node->left->nik) {
+        node->left = leftRotate(node->left);
+        return rightRotate(node);
+    }
+    
+    if (balance < -1 && newNode->nik < node->right->nik) {
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
+    return node;
+}
+
+PasienNode* searchAVL(PasienNode* root, long long nik) {
+    if (root == NULL || root->nik == nik) return root;
+    if (nik < root->nik) return searchAVL(root->left, nik);
+    return searchAVL(root->right, nik);
+}
+
+void cariDanTampilkanPasien(long long nik) {
+    PasienNode* p = searchAVL(rootAVL, nik);
+    if (p == NULL) {
+        printf("\n[!] Pasien dengan NIK %lld tidak ditemukan.\n", nik);
+    } else {
+        struct tm *t = localtime(&p->waktu_periksa);
+        printf("\n=== DATA DETAIL PASIEN ===\n");
+        printf("NIK      : %lld\n", p->nik);
