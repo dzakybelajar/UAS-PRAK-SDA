@@ -69,3 +69,4 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
     else 
         return node;
 } 
+    node->height = 1 + max(getHeight(node->left), getHeight(node->right));
