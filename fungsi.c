@@ -58,3 +58,14 @@ PasienNode* createPasien(long long nik, char nama[], char alamat[], int urgensi,
     totalPasien++;
     return newNode;
 }
+
+PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
+    if (node == NULL) return newNode;
+
+    if (newNode->nik < node->nik) 
+        node->left = insertAVL(node->left, newNode);
+    else if (newNode->nik > node->nik) 
+        node->right = insertAVL(node->right, newNode);
+    else 
+        return node;
+}
