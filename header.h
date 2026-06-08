@@ -21,3 +21,21 @@ typedef struct StackNode {
     char teks_diagnosa[500];
     struct StackNode *next;
 } StackNode;
+
+typedef struct {
+    char riwayat[10][200];
+    int head;
+    int count;
+} CircularLog;
+
+// Pointer Global
+extern PasienNode *rootAVL;
+extern QueueNode *headQueue;
+extern CircularLog logSistem;
+extern int totalPasien;
+
+void menuResepsionis();
+void menuDokter();
+int login(int role); // 1: Resepsionis, 2: Dokter
+
+// Fungsi Basis Data (AVL Tree)
