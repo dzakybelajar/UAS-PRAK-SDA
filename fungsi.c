@@ -68,4 +68,4 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
         node->right = insertAVL(node->right, newNode);
     else 
         return node;
-}
+} 
