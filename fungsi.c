@@ -40,3 +40,10 @@ PasienNode* leftRotate(PasienNode* x) {
     y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
     return y;
 }
+
+PasienNode* createPasien(long long nik, char nama[], char alamat[], int urgensi, time_t waktu, char diagnosa[]) {
+    PasienNode *newNode = (PasienNode*)malloc(sizeof(PasienNode));
+    newNode->nik = nik;
+    strcpy(newNode->nama, nama);
+    strcpy(newNode->alamat, alamat);
+    newNode->urgensi = urgensi;
