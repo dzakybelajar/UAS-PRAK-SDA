@@ -47,3 +47,13 @@ PasienNode* createPasien(long long nik, char nama[], char alamat[], int urgensi,
 PasienNode* insertAVL(PasienNode* node, PasienNode* newNode);
 PasienNode* searchAVL(PasienNode* root, long long nik);
 void cariDanTampilkanPasien(long long nik);
+
+// Fungsi Antrean (Priority Queue)
+void enqueue(PasienNode* pasien);
+void stablePrioritySort();
+void updateStatusPasien();
+
+// Ruang Periksa (Stack & Log)
+void pushUndo(StackNode** top, char teks[]);
+void addLog(PasienNode* p);
+void prosesPeriksa();
