@@ -39,3 +39,11 @@ void menuDokter();
 int login(int role); // 1: Resepsionis, 2: Dokter
 
 // Fungsi Basis Data (AVL Tree)
+int getHeight(PasienNode* n);
+int getBalance(PasienNode* n);
+PasienNode* rightRotate(PasienNode* y);
+PasienNode* leftRotate(PasienNode* x);
+PasienNode* createPasien(long long nik, char nama[], char alamat[], int urgensi, time_t waktu, char diagnosa[]);
+PasienNode* insertAVL(PasienNode* node, PasienNode* newNode);
+PasienNode* searchAVL(PasienNode* root, long long nik);
+void cariDanTampilkanPasien(long long nik);
