@@ -1,1 +1,17 @@
 # UAS-PRAK-SDA
+
+cara jalankan pakai make file  kalo pake windows: mingw32-make run
+kalo pake linux : make run
+
+username resepsionis : admin
+password : 123
+
+username dokter : dokter
+password : dok123
+
+Nama Anggota Kelompok 2 : 
+M.Dzaky Syraj
+Hanif Maulana
+Muhammad Rayyan
+Putri Rahmatul Ulya
+Keisya Zahira
