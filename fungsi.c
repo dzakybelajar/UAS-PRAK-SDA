@@ -15,3 +15,8 @@ int getHeight(PasienNode* n) {
     if (n == NULL) return 0;
     return n->height;
 }
+
+int getBalance(PasienNode* n) {
+    if (n == NULL) return 0;
+    return getHeight(n->left) - getHeight(n->right);
+}
