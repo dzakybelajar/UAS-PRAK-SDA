@@ -71,3 +71,7 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
 } 
     node->height = 1 + max(getHeight(node->left), getHeight(node->right));
         int balance = getBalance(node);
+
+            if (balance > 1 && newNode->nik < node->left->nik) return rightRotate(node);
+    
+    if (balance < -1 && newNode->nik > node->right->nik) return leftRotate(node);
