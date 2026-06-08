@@ -70,3 +70,4 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
         return node;
 } 
     node->height = 1 + max(getHeight(node->left), getHeight(node->right));
+        int balance = getBalance(node);
