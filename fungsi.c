@@ -211,4 +211,4 @@ void prosesPeriksa() {
 
     printf("\n--- PEMERIKSAAN PASIEN ---\n");
     printf("Nama: %s\n", p->nama);
-    printf("NIK : %lld\n", p->nik); 
+    printf("NIK : %lld\n", p->nik);   
