@@ -134,3 +134,14 @@ void stablePrioritySort() {
             if (j->data->urgensi < minNode->data->urgensi) {
                 minNode = j;
             }
+            else if (j->data->urgensi == minNode->data->urgensi) {
+                if (j->data->waktu_periksa < minNode->data->waktu_periksa) {
+                    minNode = j;
+                }
+            }
+        }
+        if (minNode != i) {
+            PasienNode* minData = minNode->data; 
+            QueueNode* curr = i;
+            PasienNode* prevData = curr->data;
+            
