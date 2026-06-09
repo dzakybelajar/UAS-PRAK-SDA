@@ -218,25 +218,28 @@ void prosesPeriksa() {
         scanf(" %[^\n]s", input);
 
         if (strcmp(input, "fix") == 0) {
-            if (undoStack) {
-                printf("Diagnosa berhasil diinput!\n");
-                break;
-            }
-            else {
-                printf("Diagnosa belum diinput!\n");
-            } else if (strcmp(input, "undo") == 0) {
+            if (undoStack) 
+            { printf("Diagnosa berhasil diinput!\n"); break; }
+            else printf("Diagnosa belum diinput!\n");
+        } 
+        else if (strcmp(input, "undo") == 0) {
             if (undoStack) {
                 StackNode* temp = undoStack;
                 undoStack = undoStack->next;
                 free(temp);
-
-                                if (undoStack)
-                    strcpy(p->diagnosa, undoStack->teks_diagnosa);
-                else
-                    strcpy(p->diagnosa, "Belum Diperiksa");
+                
+                // Kembalikan ke teks diagnosa sebelumnya di stack jika ada
+                if (undoStack) strcpy(p->diagnosa, undoStack->teks_diagnosa);
+                else strcpy(p->diagnosa, "Belum Diperiksa");
 
                 printf("[Undo Berhasil! Diagnosa saat ini: %s]\n", p->diagnosa);
             } 
+            else { printf("[!] Tidak ada riwayat input untuk di-undo.\n"); }
+        } 
+        else {
+            pushUndo(&undoStack, input);
+            strcpy(p->diagnosa, input); 
+        }
     } 
     
     addLog(p);
