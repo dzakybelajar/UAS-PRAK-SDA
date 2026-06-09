@@ -68,7 +68,7 @@ PasienNode* insertAVL(PasienNode* node, PasienNode* newNode) {
         node->right = insertAVL(node->right, newNode);
     else 
         return node;
-} 
+
     node->height = 1 + max(getHeight(node->left), getHeight(node->right));
         int balance = getBalance(node);
 
@@ -102,3 +102,11 @@ void cariDanTampilkanPasien(long long nik) {
         struct tm *t = localtime(&p->waktu_periksa);
         printf("\n=== DATA DETAIL PASIEN ===\n");
         printf("NIK      : %lld\n", p->nik);
+        printf("Nama     : %s\n", p->nama);
+        printf("Alamat   : %s\n", p->alamat);
+        printf("Urgensi  : %s\n", (p->urgensi == 1) ? "Darurat" : (p->urgensi == 2) ? "Mendesak" : "Biasa");
+        printf("Tanggal  : %02d/%02d/%d\n", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
+        printf("Diagnosa : %s\n", p->diagnosa);
+        printf("==========================\n");
+    }
+}
