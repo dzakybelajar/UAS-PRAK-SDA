@@ -307,3 +307,12 @@ void tampilkanLaporan() {
         for (int i = (hal - 1) * 10; i < hal * 10 && i < totalPasien; i++) {
             struct tm *t = localtime(&arr[i]->waktu_periksa);
             printf("%-15lld | %-15s | %02d/%02d/%d    | %-15s\n",
+                 arr[i]->nik, arr[i]->nama, t->tm_mday, t->tm_mon+1, t->tm_year+1900, arr[i]->diagnosa);
+        }
+        printf("Navigasi: [n] Next, [p] Prev, [q] Kembali: "); 
+        scanf(" %c", &nav);
+        if (nav == 'n' && hal < totalHal) hal++; 
+        else if (nav == 'p' && hal > 1) hal--;
+        else if (nav != 'n' && nav != 'p' && nav != 'q')
+        { printf("input tidak valid!\n"); }
+        while(getchar()!='\n');
