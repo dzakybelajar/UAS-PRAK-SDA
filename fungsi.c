@@ -316,3 +316,12 @@ void tampilkanLaporan() {
         else if (nav != 'n' && nav != 'p' && nav != 'q')
         { printf("input tidak valid!\n"); }
         while(getchar()!='\n');
+         } while (nav != 'q');
+    free(arr);
+}
+
+void simpanKeFile(PasienNode* root, FILE* file) {
+    if (root == NULL) return;
+    // Tulis data terformat ke database.txt
+    fprintf(file, "%lld|%s|%s|%d|%ld|%s\n", 
+            root->nik, root->nama, root->alamat, root->urgensi, (long)root->waktu_periksa, root->diagnosa);
