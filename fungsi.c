@@ -115,4 +115,11 @@ void enqueue(PasienNode* pasien) {
     QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
     newNode->data = pasien;
     newNode->next = NULL;
+
+     if (headQueue == NULL) headQueue = newNode;
+    else {
+        QueueNode* temp = headQueue;
+        while (temp->next != NULL) temp = temp->next;
+        temp->next = newNode;
+    }
 }
