@@ -290,3 +290,12 @@ void mergeSort(PasienNode** arr, int l, int r) {
         merge(arr, l, m, r);
     }
 }
+
+void tampilkanLaporan() {
+    if (totalPasien == 0) { printf("\n[!] Belum ada data rekam medis.\n"); return; }
+    PasienNode** arr = malloc(totalPasien * sizeof(PasienNode*));
+    int index = 0; 
+    kumpulData(rootAVL, arr, &index);
+    mergeSort(arr, 0, totalPasien - 1);
+    
+    int hal = 1, totalHal = (totalPasien + 9) / 10;
