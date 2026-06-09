@@ -152,4 +152,19 @@ void stablePrioritySort() {
     prevData = temp;
     curr = nextNode;
 }
-i->data = minData;    
+i->data = minData; 
+        }
+    }
+}
+
+void updateStatusPasien() {
+    long long n;
+    int statusBaru;
+    do{
+        n = 0;
+        printf("Masukkan NIK pasien untuk update status: ");
+        scanf("%lld", &n);
+        while(getchar()!='\n');
+        if (n <= 0)
+        { printf("NIK tidak valid!\n"); }
+    }while(n <= 0);
