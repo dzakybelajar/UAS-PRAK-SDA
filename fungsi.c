@@ -191,3 +191,10 @@ void pushUndo(StackNode** top, char teks[]) {
     newNode->next = *top;
     *top = newNode;
 }
+
+void addLog(PasienNode* p) {
+    sprintf(logSistem.riwayat[logSistem.head], "NIK: %lld | Nama: %s | Diag: %s", 
+            p->nik, p->nama, p->diagnosa);
+    logSistem.head = (logSistem.head + 1) % 10;
+    logSistem.count++;
+}
