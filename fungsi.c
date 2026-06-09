@@ -351,3 +351,11 @@ void loadDatabase() {
     while (fscanf(file, "%lld|%[^|]|%[^|]|%d|%ld|%[^\n]\n", &nik, nama, alamat, &urgensi, &waktu, diagnosa) != EOF) {
         PasienNode* baru = createPasien(nik, nama, alamat, urgensi, (time_t)waktu, diagnosa);
         rootAVL = insertAVL(rootAVL, baru);
+         
+        if(strcmp(diagnosa, "Belum Diperiksa") == 0) {
+            enqueue(baru);
+        }
+    }
+    stablePrioritySort();
+    fclose(file);
+}
