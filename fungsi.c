@@ -246,3 +246,13 @@ void prosesPeriksa() {
     QueueNode* tempQ = headQueue;
     headQueue = headQueue->next;
     free(tempQ);
+
+
+    // Free sisa undo stack
+    while(undoStack != NULL) {
+        StackNode* t = undoStack;
+        undoStack = undoStack->next;
+        free(t);
+    }
+    printf("Pemeriksaan selesai. Data berhasil disimpan!\n");
+}
