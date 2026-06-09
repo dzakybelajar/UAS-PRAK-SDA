@@ -110,3 +110,9 @@ void cariDanTampilkanPasien(long long nik) {
         printf("==========================\n");
     }
 }
+
+void enqueue(PasienNode* pasien) {
+    QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
+    newNode->data = pasien;
+    newNode->next = NULL;
+}
