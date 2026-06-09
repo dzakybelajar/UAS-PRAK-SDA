@@ -12,7 +12,6 @@ void menuUtama() {
         printf("3. Keluar Aplikasi\n");
         printf("Pilih Akses: "); 
         scanf("%d", &pilihan);
-
         while(getchar()!='\n');
 
         switch (pilihan) {
@@ -23,12 +22,15 @@ void menuUtama() {
                 if (login(2)) menuDokter();
                 break;
             case 3:
+                simpanDatabase(); // Pastikan data terselamatkan sebelum keluar
+                bersihkanQueue();
+                bersihkanAVL(rootAVL);
+                rootAVL = NULL; // Reset pointer untuk keamanan
                 printf("Terima kasih telah menggunakan MedTrack Pro.\n");
                 return;
             default:
                 printf("Pilihan tidak valid!\n");
         }
-
     }
 }
 
