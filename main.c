@@ -13,6 +13,22 @@ void menuUtama() {
         printf("Pilih Akses: "); 
         scanf("%d", &pilihan);
 
+        while(getchar()!='\n');
+
+        switch (pilihan) {
+            case 1:
+                if (login(1)) menuResepsionis();
+                break;
+            case 2:
+                if (login(2)) menuDokter();
+                break;
+            case 3:
+                printf("Terima kasih telah menggunakan MedTrack Pro.\n");
+                return;
+            default:
+                printf("Pilihan tidak valid!\n");
+        }
+
     }
 }
 
