@@ -343,3 +343,11 @@ void loadDatabase() {
     FILE* file = fopen("database.txt", "r");
     if (file == NULL) return; 
     
+    long long nik;
+    char nama[50], alamat[100], diagnosa[500];
+    int urgensi;
+    long waktu;
+    
+    while (fscanf(file, "%lld|%[^|]|%[^|]|%d|%ld|%[^\n]\n", &nik, nama, alamat, &urgensi, &waktu, diagnosa) != EOF) {
+        PasienNode* baru = createPasien(nik, nama, alamat, urgensi, (time_t)waktu, diagnosa);
+        rootAVL = insertAVL(rootAVL, baru);
