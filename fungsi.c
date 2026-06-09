@@ -212,3 +212,16 @@ void prosesPeriksa() {
     printf("\n--- PEMERIKSAAN PASIEN ---\n");
     printf("Nama: %s\n", p->nama);
     printf("NIK : %lld\n", p->nik);   
+    
+        while (1) {
+        printf("Input Diagnosa (ketik 'undo' untuk batalkan, 'fix' jika selesai): ");
+        scanf(" %[^\n]s", input);
+
+        if (strcmp(input, "fix") == 0) {
+            if (undoStack) {
+                printf("Diagnosa berhasil diinput!\n");
+                break;
+            }
+            else {
+                printf("Diagnosa belum diinput!\n");
+            }
