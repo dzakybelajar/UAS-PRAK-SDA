@@ -198,3 +198,17 @@ void addLog(PasienNode* p) {
     logSistem.head = (logSistem.head + 1) % 10;
     logSistem.count++;
 }
+
+void prosesPeriksa() {
+    if (headQueue == NULL) {
+        printf("\n[!] Antrean kosong! Tidak ada pasien untuk diperiksa.\n");
+        return;
+    }
+
+    PasienNode* p = headQueue->data;
+    StackNode* undoStack = NULL;
+    char input[500];
+
+    printf("\n--- PEMERIKSAAN PASIEN ---\n");
+    printf("Nama: %s\n", p->nama);
+    printf("NIK : %lld\n", p->nik);
