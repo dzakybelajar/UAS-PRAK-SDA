@@ -265,3 +265,11 @@ void kumpulData(PasienNode* root, PasienNode** arr, int* index) {
 }
 
 void merge(PasienNode** arr, int l, int m, int r) {
+    int n1 = m - l + 1, n2 = r - m;
+    PasienNode **L = malloc(n1 * sizeof(PasienNode*));
+    PasienNode **R = malloc(n2 * sizeof(PasienNode*));
+    
+    for (int i = 0; i < n1; i++) L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+    
+    int i = 0, j = 0, k = l;
