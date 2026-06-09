@@ -212,7 +212,7 @@ void prosesPeriksa() {
     printf("\n--- PEMERIKSAAN PASIEN ---\n");
     printf("Nama: %s\n", p->nama);
     printf("NIK : %lld\n", p->nik);   
-    
+
         while (1) {
         printf("Input Diagnosa (ketik 'undo' untuk batalkan, 'fix' jika selesai): ");
         scanf(" %[^\n]s", input);
@@ -224,4 +224,8 @@ void prosesPeriksa() {
             }
             else {
                 printf("Diagnosa belum diinput!\n");
-            }
+            } else if (strcmp(input, "undo") == 0) {
+            if (undoStack) {
+                StackNode* temp = undoStack;
+                undoStack = undoStack->next;
+                free(temp);
