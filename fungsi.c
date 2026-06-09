@@ -335,3 +335,11 @@ void simpanDatabase() {
         printf("[!] Gagal menyimpan database.\n");
         return;
     }
+    simpanKeFile(rootAVL, file);
+    fclose(file);
+}
+
+void loadDatabase() {
+    FILE* file = fopen("database.txt", "r");
+    if (file == NULL) return; 
+    
