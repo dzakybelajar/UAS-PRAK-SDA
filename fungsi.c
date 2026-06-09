@@ -229,3 +229,11 @@ void prosesPeriksa() {
                 StackNode* temp = undoStack;
                 undoStack = undoStack->next;
                 free(temp);
+
+                                if (undoStack)
+                    strcpy(p->diagnosa, undoStack->teks_diagnosa);
+                else
+                    strcpy(p->diagnosa, "Belum Diperiksa");
+
+                printf("[Undo Berhasil! Diagnosa saat ini: %s]\n", p->diagnosa);
+            } 
