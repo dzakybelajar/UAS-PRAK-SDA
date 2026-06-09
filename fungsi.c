@@ -145,3 +145,11 @@ void stablePrioritySort() {
             QueueNode* curr = i;
             PasienNode* prevData = curr->data;
             
+        while (curr != minNode) {
+    QueueNode* nextNode = curr->next;
+    PasienNode* temp = nextNode->data;
+    nextNode->data = prevData;
+    prevData = temp;
+    curr = nextNode;
+}
+i->data = minData;    
