@@ -123,3 +123,14 @@ void enqueue(PasienNode* pasien) {
         temp->next = newNode;
     }
 }
+
+void stablePrioritySort() {
+    if (!headQueue || !headQueue->next) return;
+    
+    for (QueueNode* i = headQueue; i != NULL; i = i->next) {
+        QueueNode* minNode = i;
+        
+        for (QueueNode* j = i->next; j != NULL; j = j->next) {
+            if (j->data->urgensi < minNode->data->urgensi) {
+                minNode = j;
+            }
