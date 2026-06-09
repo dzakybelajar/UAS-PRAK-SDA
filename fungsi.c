@@ -181,3 +181,13 @@ if (p) {
 }while(statusBaru <= 0 || statusBaru > 3);
 p->urgensi = statusBaru;
 stablePrioritySort();
+printf("Status berhasil diperbarui dan posisi antrean disesuaikan!\n");
+} else printf("Pasien tidak ditemukan!\n");
+}
+
+void pushUndo(StackNode** top, char teks[]) {
+    StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
+    strcpy(newNode->teks_diagnosa, teks);
+    newNode->next = *top;
+    *top = newNode;
+}
