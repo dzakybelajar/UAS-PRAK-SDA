@@ -140,7 +140,7 @@ void stablePrioritySort() {
                 }
             }
         }
-        if (minNode != i) {
+        if (minNode != i) { 
             PasienNode* minData = minNode->data; 
             QueueNode* curr = i;
             PasienNode* prevData = curr->data;
