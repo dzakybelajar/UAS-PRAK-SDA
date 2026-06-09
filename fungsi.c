@@ -237,3 +237,12 @@ void prosesPeriksa() {
 
                 printf("[Undo Berhasil! Diagnosa saat ini: %s]\n", p->diagnosa);
             } 
+    } 
+    
+    addLog(p);
+    simpanDatabase(); // Auto-save ke file setiap kali selesai periksa
+    
+    // Dequeue pasien yang sudah diperiksa
+    QueueNode* tempQ = headQueue;
+    headQueue = headQueue->next;
+    free(tempQ);
