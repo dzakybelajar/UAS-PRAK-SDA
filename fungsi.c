@@ -168,3 +168,6 @@ void updateStatusPasien() {
         if (n <= 0)
         { printf("NIK tidak valid!\n"); }
     }while(n <= 0);
+PasienNode* p = searchAVL(rootAVL, n);
+if (p) {
+    printf("Ditemukan: %s | Status Sekarang: %d\n", p->nama, p->urgensi);
