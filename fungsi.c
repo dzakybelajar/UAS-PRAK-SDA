@@ -299,3 +299,11 @@ void tampilkanLaporan() {
     mergeSort(arr, 0, totalPasien - 1);
     
     int hal = 1, totalHal = (totalPasien + 9) / 10;
+    char nav;
+    do {
+        printf("\n--- LAPORAN REKAM MEDIS (Hal %d/%d) ---\n", hal, totalHal);
+        printf("%-15s | %-15s | %-12s | %-15s\n", "NIK", "NAMA", "TANGGAL", "DIAGNOSA");
+        printf("------------------------------------------------------------------\n");
+        for (int i = (hal - 1) * 10; i < hal * 10 && i < totalPasien; i++) {
+            struct tm *t = localtime(&arr[i]->waktu_periksa);
+            printf("%-15lld | %-15s | %02d/%02d/%d    | %-15s\n",
