@@ -256,3 +256,12 @@ void prosesPeriksa() {
     }
     printf("Pemeriksaan selesai. Data berhasil disimpan!\n");
 }
+
+void kumpulData(PasienNode* root, PasienNode** arr, int* index) {
+    if (root == NULL) return;
+    kumpulData(root->left, arr, index);
+    arr[(*index)++] = root;
+    kumpulData(root->right, arr, index);
+}
+
+void merge(PasienNode** arr, int l, int m, int r) {
