@@ -325,3 +325,13 @@ void simpanKeFile(PasienNode* root, FILE* file) {
     // Tulis data terformat ke database.txt
     fprintf(file, "%lld|%s|%s|%d|%ld|%s\n", 
             root->nik, root->nama, root->alamat, root->urgensi, (long)root->waktu_periksa, root->diagnosa);
+             simpanKeFile(root->left, file);
+    simpanKeFile(root->right, file);
+}
+
+void simpanDatabase() {
+    FILE* file = fopen("database.txt", "w");
+    if (file == NULL) {
+        printf("[!] Gagal menyimpan database.\n");
+        return;
+    }
