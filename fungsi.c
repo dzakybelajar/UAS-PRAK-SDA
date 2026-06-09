@@ -171,3 +171,13 @@ void updateStatusPasien() {
 PasienNode* p = searchAVL(rootAVL, n);
 if (p) {
     printf("Ditemukan: %s | Status Sekarang: %d\n", p->nama, p->urgensi);
+    do{
+    statusBaru = 0;
+    printf("Pilih Status Baru (1: Darurat, 2: Mendesak, 3: Biasa): ");
+    scanf("%d", &statusBaru);
+    while(getchar()!='\n');
+    if (statusBaru <= 0 || statusBaru > 3)
+    { printf("Input tidak valid!\n"); }
+}while(statusBaru <= 0 || statusBaru > 3);
+p->urgensi = statusBaru;
+stablePrioritySort();
