@@ -130,3 +130,12 @@ void menuDokter() {
         printf("1. Periksa Pasien Terdepan (Undo Stack)\n");
         printf("2. Riwayat Aktivitas Log (Circular Log)\n");
         printf("3. Cetak Seluruh Laporan Rekam Medis (Merge Sort)\n");
+          printf("4. Logout\n");
+        printf("Pilih: "); 
+        scanf("%d", &pilihan);
+        while(getchar()!='\n');
+
+        switch (pilihan) {
+            case 1:
+                prosesPeriksa();
+                break;
