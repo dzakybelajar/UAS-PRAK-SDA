@@ -157,3 +157,5 @@ void menuDokter() {
                 int start = (logSistem.count > 10) ? logSistem.head : 0;
                 if(jml == 0) printf("[Log Kosong]\n");
                 for(int i=0; i<jml; i++) {
+                     printf("- %s\n", logSistem.riwayat[(start+i)%10]);
+                }
