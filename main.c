@@ -161,3 +161,5 @@ void menuDokter() {
                 }
                 break;
             case 3:
+                tampilkanLaporan();
+                break;
