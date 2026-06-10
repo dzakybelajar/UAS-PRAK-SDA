@@ -151,3 +151,5 @@ void menuDokter() {
             case 1:
                 prosesPeriksa();
                 break;
+            case 2:
+                printf("\n--- LOG 10 RIWAYAT TERAKHIR ---\n");
