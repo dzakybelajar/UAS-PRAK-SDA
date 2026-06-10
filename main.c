@@ -38,7 +38,16 @@ void menuResepsionis() {
         switch (pilihan) {
             case 1:
                 do {
+do {
+    n = 0;
+    printf("NIK: "); 
+    scanf("%lld", &n);
+    while(getchar()!='\n');
 
+    if (n == 0) {
+        printf("NIK tidak valid!\n");
+    }
+} while(n == 0);
 void menuUtama() {
     int pilihan;
     while (1) {
