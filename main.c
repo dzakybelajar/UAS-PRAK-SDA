@@ -95,6 +95,44 @@ void menuResepsionis() {
                     }
                 }
 
+
+
+void menuDokter() {
+    int pilihan;
+    while (1) {
+        pilihan = 0;
+        printf("\n=== PORTAL DOKTER ===\n");
+        printf("1. Periksa Pasien Terdepan (Undo Stack)\n");
+        printf("2. Riwayat Aktivitas Log (Circular Log)\n");
+        printf("3. Cetak Seluruh Laporan Rekam Medis (Merge Sort)\n");
+          printf("4. Logout\n");
+        printf("Pilih: "); 
+        scanf("%d", &pilihan);
+        while(getchar()!='\n');
+
+        switch (pilihan) {
+            case 1:
+                prosesPeriksa();
+                break;
+            case 2:
+                printf("\n--- LOG 10 RIWAYAT TERAKHIR ---\n");
+                int jml = (logSistem.count > 10) ? 10 : logSistem.count;
+                int start = (logSistem.count > 10) ? logSistem.head : 0;
+                if(jml == 0) printf("[Log Kosong]\n");
+                for(int i=0; i<jml; i++) {
+                     printf("- %s\n", logSistem.riwayat[(start+i)%10]);
+                }
+                break;
+            case 3:
+                tampilkanLaporan();
+                break;
+            case 4:
+                return;
+            default:
+                printf("Pilihan tidak valid!\n");
+        }
+    }
+}
 void menuUtama() {
     int pilihan;
     while (1) {
@@ -133,40 +171,3 @@ int main() {
     menuUtama();
     return 0;
 } 
-
-void menuDokter() {
-    int pilihan;
-    while (1) {
-        pilihan = 0;
-        printf("\n=== PORTAL DOKTER ===\n");
-        printf("1. Periksa Pasien Terdepan (Undo Stack)\n");
-        printf("2. Riwayat Aktivitas Log (Circular Log)\n");
-        printf("3. Cetak Seluruh Laporan Rekam Medis (Merge Sort)\n");
-          printf("4. Logout\n");
-        printf("Pilih: "); 
-        scanf("%d", &pilihan);
-        while(getchar()!='\n');
-
-        switch (pilihan) {
-            case 1:
-                prosesPeriksa();
-                break;
-            case 2:
-                printf("\n--- LOG 10 RIWAYAT TERAKHIR ---\n");
-                int jml = (logSistem.count > 10) ? 10 : logSistem.count;
-                int start = (logSistem.count > 10) ? logSistem.head : 0;
-                if(jml == 0) printf("[Log Kosong]\n");
-                for(int i=0; i<jml; i++) {
-                     printf("- %s\n", logSistem.riwayat[(start+i)%10]);
-                }
-                break;
-            case 3:
-                tampilkanLaporan();
-                break;
-            case 4:
-                return;
-            default:
-                printf("Pilihan tidak valid!\n");
-        }
-    }
-}
