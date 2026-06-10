@@ -155,3 +155,5 @@ void menuDokter() {
                 printf("\n--- LOG 10 RIWAYAT TERAKHIR ---\n");
                 int jml = (logSistem.count > 10) ? 10 : logSistem.count;
                 int start = (logSistem.count > 10) ? logSistem.head : 0;
+                if(jml == 0) printf("[Log Kosong]\n");
+                for(int i=0; i<jml; i++) {
