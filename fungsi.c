@@ -369,3 +369,11 @@ void bersihkanAVL(PasienNode* root) {
     bersihkanAVL(root->right);
     free(root); 
 }
+
+void bersihkanQueue() {
+    while (headQueue != NULL) {
+        QueueNode* temp = headQueue;
+        headQueue = headQueue->next;
+        free(temp);
+    }
+}
