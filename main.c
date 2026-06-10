@@ -48,6 +48,10 @@ do {
         printf("NIK tidak valid!\n");
     }
 } while(n == 0);
+if(searchAVL(rootAVL, n) != NULL) {
+    printf("[!] NIK sudah terdaftar di sistem!\n");
+    break;
+}
 void menuUtama() {
     int pilihan;
     while (1) {
