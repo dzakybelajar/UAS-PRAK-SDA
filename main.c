@@ -15,6 +15,18 @@ if (role == 1) {
 }else if (role == 2) {
     if (strcmp(username, "dokter") == 0 && strcmp(password, "dok123") == 0) return 1;
 }
+printf("[!] Username atau Password Salah!\n");
+    return 0;
+}
+
+void menuResepsionis() {
+    int pilihan, urg;
+    long long n;
+    char nm[50], alm[100];
+    
+    while (1) {
+        pilihan = 0;
+        printf("\n=== PORTAL RESEPSIONIS ===\n");
 
 void menuUtama() {
     int pilihan;
