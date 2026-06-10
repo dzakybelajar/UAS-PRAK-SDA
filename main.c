@@ -121,3 +121,12 @@ int main() {
     menuUtama();
     return 0;
 } 
+
+void menuDokter() {
+    int pilihan;
+    while (1) {
+        pilihan = 0;
+        printf("\n=== PORTAL DOKTER ===\n");
+        printf("1. Periksa Pasien Terdepan (Undo Stack)\n");
+        printf("2. Riwayat Aktivitas Log (Circular Log)\n");
+        printf("3. Cetak Seluruh Laporan Rekam Medis (Merge Sort)\n");
