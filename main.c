@@ -153,3 +153,5 @@ void menuDokter() {
                 break;
             case 2:
                 printf("\n--- LOG 10 RIWAYAT TERAKHIR ---\n");
+                int jml = (logSistem.count > 10) ? 10 : logSistem.count;
+                int start = (logSistem.count > 10) ? logSistem.head : 0;
