@@ -163,3 +163,10 @@ void menuDokter() {
             case 3:
                 tampilkanLaporan();
                 break;
+            case 4:
+                return;
+            default:
+                printf("Pilihan tidak valid!\n");
+        }
+    }
+}
