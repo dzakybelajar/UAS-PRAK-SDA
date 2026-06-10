@@ -27,6 +27,17 @@ void menuResepsionis() {
     while (1) {
         pilihan = 0;
         printf("\n=== PORTAL RESEPSIONIS ===\n");
+        printf("1. Registrasi Pasien Baru (Auto-Queue)\n");
+        printf("2. Cari Detail Pasien (via NIK)\n");
+        printf("3. Update Status Urgensi Antrean\n");
+        printf("4. Logout\n");
+        printf("Pilih: "); 
+        scanf("%d", &pilihan);
+        while(getchar()!='\n');
+
+        switch (pilihan) {
+            case 1:
+                do {
 
 void menuUtama() {
     int pilihan;
