@@ -159,3 +159,5 @@ void menuDokter() {
                 for(int i=0; i<jml; i++) {
                      printf("- %s\n", logSistem.riwayat[(start+i)%10]);
                 }
+                break;
+            case 3:
