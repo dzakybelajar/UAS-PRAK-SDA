@@ -2,6 +2,13 @@
 #include <string.h>
 #include "header.h"
 
+int login(int role) {
+    char username[20];
+    char password[20];
+
+    printf("\n--- LOGIN SYSTEM ---\n");
+    printf("Username: "); scanf("%s", username);
+
 void menuUtama() {
     int pilihan;
     while (1) {
