@@ -52,6 +52,8 @@ if(searchAVL(rootAVL, n) != NULL) {
     printf("[!] NIK sudah terdaftar di sistem!\n");
     break;
 }
+printf("Nama: "); scanf(" %[^\n]s", nm);
+printf("Alamat: "); scanf(" %[^\n]s", alm);
 void menuUtama() {
     int pilihan;
     while (1) {
