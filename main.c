@@ -64,6 +64,25 @@ do {
         printf("Input tidak valid!\n");
     }
 } while(urg <= 0 || urg > 3);
+
+                PasienNode* baru = createPasien(n, nm, alm, urg, 0, NULL);
+                rootAVL = insertAVL(rootAVL, baru);
+                enqueue(baru); 
+                stablePrioritySort();
+                simpanDatabase(); // Save database ke file
+                printf("Berhasil terdaftar dan masuk antrean!\n");
+                break;
+            case 2:
+                do {
+                    n = 0;
+                    printf("NIK: "); 
+                    scanf("%lld", &n);
+                    while(getchar()!='\n');
+                    if (n == 0)
+                    { printf("NIK tidak valid!\n"); }
+                }while(n == 0);
+                cariDanTampilkanPasien(n);
+                break;
 void menuUtama() {
     int pilihan;
     while (1) {
