@@ -54,6 +54,16 @@ if(searchAVL(rootAVL, n) != NULL) {
 }
 printf("Nama: "); scanf(" %[^\n]s", nm);
 printf("Alamat: "); scanf(" %[^\n]s", alm);
+do {
+    urg = 0;
+    printf("Urgensi (1:Darurat, 2:Mendesak, 3:Biasa): "); 
+    scanf("%d", &urg);
+    while(getchar()!='\n');
+
+    if (urg == 0 || urg > 3) {
+        printf("Input tidak valid!\n");
+    }
+} while(urg <= 0 || urg > 3);
 void menuUtama() {
     int pilihan;
     while (1) {
