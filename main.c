@@ -8,6 +8,13 @@ int login(int role) {
 
     printf("\n--- LOGIN SYSTEM ---\n");
     printf("Username: "); scanf("%s", username);
+    printf("Password: "); scanf("%s", password);
+
+if (role == 1) {
+    if (strcmp(username, "admin") == 0 && strcmp(password, "123") == 0) return 1;
+}else if (role == 2) {
+    if (strcmp(username, "dokter") == 0 && strcmp(password, "dok123") == 0) return 1;
+}
 
 void menuUtama() {
     int pilihan;
