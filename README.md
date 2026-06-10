@@ -57,15 +57,15 @@ Pilih:
 
 ## Tim Pengembang
 
-------------------------------------------------------------------
-| Nama                | Kontribusi Utama                         |
-|---------------------|------------------------------------------|
-| M.Dzaky Syraj       | Implementasi Stack dan Queue, menu utama |
-| Hanif Maulana       | Implementasi BST dan Inorder Traversal   |
-| Muhammad Rayyan     | Implementasi Linked List, fungsi sorting |
-| Putri Rahmatul Ulya | Pengujian, dokumentasi README, laporan   |
-| Keisya Zahira       | Pengujian, dokumentasi README, laporan   |
-------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+|         Nama         |                                   Kontribusi Utama                                             |
+|----------------------|------------------------------------------------------------------------------------------------|
+| M. Dzaky Syraj       | Implementasi AVL Tree, manajemen File I/O (Database), menu utama, dan dokumentasi README       |
+| Hanif Maulana        | Implementasi Queue, modul updateStatusPasien, dan pengujian program                            |
+| Muhammad Rayyan      | Implementasi fungsi stablePrioritySort, analisis kompleksitas algoritma antrean, dan laporan   |
+| Putri Rahmatul Ulya  | Implementasi Stack (Undo Diagnosa), modul CircularLog, dan laporan                             |
+| Keisya Zahira        | Implementasi fungsi kumpulData, Merge Sort untuk visualisasi laporan terpaginasi, dan laporan  |
+-------------------------------------------------------------------------------------------------------------------------
 
 ## Lisensi
 
